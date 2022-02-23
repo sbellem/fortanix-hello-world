@@ -1,8 +1,8 @@
 # fortanix-hello-world
 
-Toy example for fortanix rust-sgx.
+Toy example for [fortanix rust-sgx](https://github.com/fortanix/rust-sgx).
 
-See the `Dockerfile` for learning purposes.
+See the [`Dockerfile`](./Dockerfile) for learning purposes.
 
 To build the image to run the hello world app:
 
