@@ -1,11 +1,35 @@
 # fortanix-hello-world
-
 Toy example for [fortanix rust-sgx](https://github.com/fortanix/rust-sgx).
 
 We provide two ways to build and run the project:
 
 1. Via `docker`
 2. Via `nix` (work-in-progress)
+
+## Prerequisites
+Requires an SGX-enabled computer.
+
+If you have `nix` installed you can quickly check with:
+
+```console
+nix shell github:initc3/nix-fortanix?dir=sgxs-tools -c sgx-detect
+```
+
+Alternatively, install `sgxs-tools`, and run `sgx-detect`. Note that you may
+need to install `protobuf-compiler` (assuming Debian), e.g.:
+
+```console
+apt-get install protobuf-compiler
+```
+
+```console
+cargo install sgxs-tools
+```
+```console
+sgx-detect
+```
+
+See https://github.com/ayeks/SGX-hardware for help.
 
 ## Hello World with Docker
 See the [`Dockerfile`](./Dockerfile) for learning purposes.
@@ -55,20 +79,10 @@ Hello, world!
 ## Hello World with Nix
 Install `nix` if you don't have it.
 
-**WORK-in-PROGRESS**
-
-**MISSING**:
-
-* `fortanix-sgx-tools` dependency must be added to the `moz.nix` file (for
-  `ftxsgx-elf2sgxs` and `ftxsgx-runner`).
-
-In order to work right now, must install `fortanix-sgx-tools` on host system,
-and cannot run with `nix-shell --pure` option.
-
 Run:
 
 ```console
-nix-shell moz.nix
+nix-shell --pure
 ```
 
 To run with `cargo`:
@@ -94,19 +108,4 @@ Run:
 
 ```console
 ftxsgx-runner ./target/x86_64-fortanix-unknown-sgx/debug/hello.sgxs
-```
-
-
-## Notes
-The `.cargo/config` file contains:
-
-```config
-[target.x86_64-fortanix-unknown-sgx]
-runner = "ftxsgx-runner-cargo"
-```
-
-The equivalent can be set via an environment variable, e.g.:
-
-```shell
-CARGO_TARGET_X86_64_FORTANIX_UNKNOWN_SGX_RUNNER = "ftxsgx-runner-cargo"
 ```
