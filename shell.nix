@@ -4,7 +4,7 @@ let
   fortanix = import sources.fortanix;
 in
   with nixpkgs;
-  stdenv.mkDerivation {
+  mkShell {
     name = "fortanix-hello-world";
 
     buildInputs = [
