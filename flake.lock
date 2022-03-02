@@ -11,7 +11,6 @@
       },
       "original": {
         "owner": "numtide",
-        "ref": "master",
         "repo": "flake-utils",
         "type": "github"
       }
@@ -147,16 +146,15 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1645765209,
-        "narHash": "sha256-tLpNZlpCjWpbbxhDgQ/e5z2fL1RZGLYJWkkCOJNqlcI=",
+        "lastModified": 1646179076,
+        "narHash": "sha256-8NEQbrAONTrhnWdifPF2B6h/zmEbkzO2+9/p09i/y7U=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "056c34167d3210a674ef21691afbbce1ed63f8ca",
+        "rev": "0c5696f9daee082243a13b6d165f6099c3a60c05",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -282,16 +280,18 @@
         "rust-overlay": "rust-overlay_3"
       },
       "locked": {
-        "lastModified": 1645944217,
-        "narHash": "sha256-gtywJN3DC3H86j0l8foAZ+FwpJlUBpE2N8fqJTTkVBg=",
-        "owner": "sbellem",
-        "repo": "x",
-        "rev": "0bd0a17e918594f1f465ecff385416ef041dce90",
+        "dir": "sgxs-tools",
+        "lastModified": 1645943033,
+        "narHash": "sha256-XnUNkgaCgsmLTPOdx2Od7ZtpJ5M1P3KhCodBHds+VSg=",
+        "owner": "initc3",
+        "repo": "nix-fortanix",
+        "rev": "574007f69efc230e6b4464799b366b8f8797200e",
         "type": "github"
       },
       "original": {
-        "owner": "sbellem",
-        "repo": "x",
+        "dir": "sgxs-tools",
+        "owner": "initc3",
+        "repo": "nix-fortanix",
         "type": "github"
       }
     }
