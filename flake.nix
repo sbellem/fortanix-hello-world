@@ -54,12 +54,18 @@
 
             mkdir -p $out/bin
             cp -r target/x86_64-fortanix-unknown-sgx/debug $out/bin/debug
+            cp -r target/x86_64-fortanix-unknown-sgx/debug/hello.sgxs $out/bin/fortanix-hello-world
 
             runHook postInstall
             '';
 
             doCheck = false;
         };
+
+        #defaultApp = flake-utils.lib.mkApp {
+        #  drv = self.defaultPackage."${system}";
+        #} // {
+        #  CARGO_TARGET_X86_64_FORTANIX_UNKNOWN_SGX_RUNNER = "ftxsgx-runner-cargo";};
 
         devShell = mkShell {
           CARGO_TARGET_X86_64_FORTANIX_UNKNOWN_SGX_RUNNER = "ftxsgx-runner-cargo";
